@@ -1,0 +1,26 @@
+<%- include('partials/header.ejs') %>
+
+<style>
+    p{
+        margin-top: 15px;
+        margin-left: 50px;
+        margin-right: 50px;
+        font-size: 20px;
+    }
+    .btn{
+        margin-left: 50px;
+        margin-bottom: 30px;
+    }
+</style>
+
+<p>Welcome to our Diary Blog – a glimpse into the pages of life! Join us on a journey of emotions, experiences, and reflections as we share the ups, downs, and everything in between. Through our heartfelt entries, we invite you to explore the moments that shape us, the stories that inspire us, and the lessons that empower us. Let's embark on this intimate adventure together, where every word is a brushstroke painting the canvas of our lives. Get ready to immerse yourself in tales of growth, discovery, and the beautiful tapestry of human existence. This is more than just a blog – it's a sanctuary for the soul's whispers and the heart's echoes. Start reading, start feeling, and start connecting with the shared threads of humanity.</p>
+
+<a href="/compose" class="btn" style="background-color: #1abc9c; color: white;">Compose</a>
+
+<% displayNew.forEach((display) => { %>
+    <h1><%= display.title %></h1>
+    <p><%= display.content.substring(0, 100) + "..." %></p>
+    <a href="/post/<%= display.title %>">Readmore</a>
+<% }) %>
+
+<%- include('partials/footer.ejs') %>
