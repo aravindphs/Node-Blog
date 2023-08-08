@@ -5,7 +5,7 @@ import bodyParser from "body-parser";
 import ejs from "ejs";
 import lodash from "lodash";
 
-const port = 3002;
+const port = 5000;
 
 const homeStartingContent = "";
 const aboutContent = "";
@@ -64,12 +64,8 @@ app.get("/post/:email", (req,res) => {
 });
 
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`Your server started on port ${port}`);
 })
 
 
-
-app.listen(3000, function() {
-  console.log("Server started on port 3000");
-});
