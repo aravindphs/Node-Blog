@@ -83,7 +83,15 @@ body {
     <% displayNew.forEach((display) => { %>
     <div class="post-title"><%= display.title %></div>
     <div class="post-content"><%= display.content.substring(0, 100) + "..." %></div>
-    <a href="/post/<%= display.title %>" class="readmore-link">Read more</a>
+
+    <form action="/post/<%= display.title %>" method="get" style="display: inline;">
+      <button type="submit" class="readmore-link btn btn-sm" style="background-color: #1abc9c; color: white;">Read More</button>
+    </form>
+
+    <form action="/delete/<%= display.title %>" method="POST" style="display: inline;">
+      <button type="submit" class="btn btn-danger btn-sm" style="margin-left: 5px;">Delete</button>
+    </form>
+
     <% }) %>
   </div>
 
