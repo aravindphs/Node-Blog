@@ -80,7 +80,7 @@ body {
 
     <a href="/compose" class="btn" style="background-color: #1abc9c; color: white;">Compose</a>
 
-    <% displayNew.forEach((display) => { %>
+    <% displayNew.reverse().forEach((display) => { %>
     <div class="post-title"><%= display.title %></div>
     <div class="post-content"><%= display.content.substring(0, 100) + "..." %></div>
 
