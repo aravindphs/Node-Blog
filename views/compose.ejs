@@ -1,18 +1,30 @@
 <%- include ("partials/header.ejs") %>
 
-<h3><b>Compose</b></h3>
-<form action="/COMPOSE" method="post">
-    <div class="form-group">
-        <div class="mb-3 form-group">
-            <label>Tilte</label>
-            <input class="form-control" type="text" name="inputText">   
+<style>
+    .content-container {
+        margin-top: 70px; 
+    }
+
+    .container>h3 {
+        color: #1abc9c;
+    }
+</style>
+
+<div class="container content-container">
+    <h3><b>Compose</b></h3>
+    <form action="/COMPOSE" method="post">
+        <div class="form-group">
+            <div class="mb-3 form-group">
+                <label>Tilte</label>
+                <input class="form-control" type="text" name="inputText">   
+            </div>
+            <div class="mb-3 form-group">
+                <label>Post</label>
+                <textarea class="form-control" name="textArea" id="" cols="50" rows="8"></textarea>
+            </div>
+            <button class="btn" style="background-color: #1abc9c; color: white;" type="submit" name="button">Publish</button>
         </div>
-        <div class="mb-3 form-group">
-            <label>Post</label>
-            <textarea class="form-control" name="textArea" id="" cols="50" rows="8"></textarea>
-        </div>
-        <button class="btn" style="background-color: #1abc9c; color: white;" type="submit" name="button">Publish</button>
-    </div>
-</form>
+    </form>
+</div>
 
 <%- include("partials/footer.ejs") %>
