@@ -1,37 +1,67 @@
-<%- include('partials/header.ejs') %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
-<style>
-    h3{
-        margin-bottom: 0;
-        color: #1abc9c;
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us - Diary Blog</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
     }
+
+    .container {
+      margin: 20px;
+    }
+
+    .content-container {
+        margin-top: 70px; 
+    }
+
+
+
+    .container>h3 {
+      margin-bottom: 0;
+      color: #1abc9c;
+    }
+  </style>
+</head>
+
+<body>
+  <%- include('partials/header.ejs') %>
+
+  <div class="container content-container">
+    <p>
+        <b><h3>Who We Are</h1></b><br>
     
-</style>
+        <p>We are a diverse group of individuals bound by our love for storytelling and our fascination with the tapestry of life. From different walks of life, cultures, and backgrounds, we have come together to weave a collective narrative that reflects the universal threads that connect us all.</p>
+    
+        <br><h3><b>Our Purpose</b></h3><br>
+    
+        <p>At Diary Blog, we believe that everyone's story is worth telling. Our purpose is to create a platform that transcends borders and barriers, inviting readers from all corners of the world to join us in this journey of self-discovery and connection. Through our heartfelt words, we aim to inspire, comfort, and provoke thought, reminding each reader that they are never alone in their experiences.</p>
+    
+        <br><h3><b>What We Share</b></h3><br>
+    
+        <p>Here, you will find a diverse range of diary entries, musings, and reflections that capture the essence of what it means to be human. From the triumphs that make our hearts soar to the challenges that test our strength, our writers bare their souls, inviting you to step into their shoes and share in their emotions.</p>
+    
+        <br><h3><b>Our Invitation</b></h3><br>
+    
+        <p>We invite you to embark on this journey with us – to immerse yourself in the stories that shape us, the moments that move us, and the connections that unite us. Whether you're seeking inspiration, seeking solace, or simply seeking a moment of respite from the demands of everyday life, Diary Blog welcomes you with open arms.</p><br>
+    
+        Thank you for being a part of our community, for sharing your own stories, and for allowing us to be a part of your own journey.<br> Together, we'll continue to celebrate the beauty of the human experience, one heartfelt entry at a time.
+    
+        <br>
+        With love and gratitude,
+    
+        <br>
+        The Diary Blog Team
+    </p>
+  </div>
 
-<p>
-    <b><h3>Who We Are</h1></b><br>
+  <%- include('partials/footer.ejs') %>
 
-    We are a diverse group of individuals bound by our love for storytelling and our fascination with the tapestry of life. From different walks of life, cultures, and backgrounds, we have come together to weave a collective narrative that reflects the universal threads that connect us all.
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 
-    <br><h3><b>Our Purpose</b></h3><br>
-
-    At Diary Blog, we believe that everyone's story is worth telling. Our purpose is to create a platform that transcends borders and barriers, inviting readers from all corners of the world to join us in this journey of self-discovery and connection. Through our heartfelt words, we aim to inspire, comfort, and provoke thought, reminding each reader that they are never alone in their experiences.
-
-    <br><h3><b>What We Share</b></h3><br>
-
-    Here, you will find a diverse range of diary entries, musings, and reflections that capture the essence of what it means to be human. From the triumphs that make our hearts soar to the challenges that test our strength, our writers bare their souls, inviting you to step into their shoes and share in their emotions.
-
-    <br><h3><b>Our Invitation</b></h3><br>
-
-    We invite you to embark on this journey with us – to immerse yourself in the stories that shape us, the moments that move us, and the connections that unite us. Whether you're seeking inspiration, seeking solace, or simply seeking a moment of respite from the demands of everyday life, Diary Blog welcomes you with open arms.
-
-    Thank you for being a part of our community, for sharing your own stories, and for allowing us to be a part of your own journey. Together, we'll continue to celebrate the beauty of the human experience, one heartfelt entry at a time.
-
-    <br>
-    With love and gratitude,
-
-   <br>
-    The Diary Blog Team
-</p>
-
-<%- include('partials/footer.ejs') %>
+</html>
