@@ -63,6 +63,19 @@ app.get("/post/:email", (req,res) => {
   });
 });
 
+app.post("/delete/:email", (req, res) => {
+  const requestedTitle = _.lowerCase(req.params.email);
+  const indexToRemove = displayNew.findIndex((display) =>
+    _.lowerCase(display.title) === requestedTitle
+  );
+
+  if (indexToRemove !== -1) {
+    displayNew.splice(indexToRemove, 1);
+  }
+
+  res.redirect("/");
+});
+
 
 app.listen(process.env.PORT || port, () => {
   console.log(`Your server started on port ${port}`);
