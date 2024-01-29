@@ -1,5 +1,3 @@
-//jshint esversion:6
-
 import express from "express";
 import bodyParser from "body-parser";
 import ejs from "ejs";
@@ -9,55 +7,54 @@ const port = 5000;
 
 const homeStartingContent = "";
 const aboutContent = "";
-const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rhoncus urna neque viverra justo nec ultrices. Arcu dui vivamus arcu felis bibendum. Consectetur adipiscing elit duis tristique. Risus viverra adipiscing at in tellus integer feugiat. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Consequat interdum varius sit amet mattis. Iaculis nunc sed augue lacus. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Pulvinar elementum integer enim neque. Ultrices gravida dictum fusce ut placerat orci nulla. Mauris in aliquam sem fringilla ut morbi tincidunt. Tortor posuere ac ut consequat semper viverra nam libero.";
 
 const app = express();
 const _ = lodash;
 
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 var displayNew = [];
 
-app.get("/", (req,res) => {
+app.get("/", (req, res) => {
   res.render("home.ejs", {
-    homeText : homeStartingContent,
-    displayNew : displayNew
-  })
+    homeText: homeStartingContent,
+    displayNew: displayNew,
+  });
   console.log(displayNew);
 });
-app.get("/contact", (req,res) => {
+app.get("/contact", (req, res) => {
   res.render("contact.ejs", {
-    contactText : aboutContent,
-  })
+    contactText: aboutContent,
+  });
 });
-app.get("/about", (req,res) => {
+app.get("/about", (req, res) => {
   res.render("about.ejs", {
-    aboutText : aboutContent,
-  })
+    aboutText: aboutContent,
+  });
 });
-app.get("/compose", (req,res) => {
-  res.render("compose.ejs")
+app.get("/compose", (req, res) => {
+  res.render("compose.ejs");
 });
-app.post("/compose", (req,res) => {
+app.post("/compose", (req, res) => {
   const display = {
-    title : req.body.inputText,
-    content : req.body.textArea,
-  }
+    title: req.body.inputText,
+    content: req.body.textArea,
+  };
   displayNew.push(display);
   res.redirect("/");
 });
-app.get("/post/:email", (req,res) => {
+app.get("/post/:email", (req, res) => {
   const requestedTitle = _.lowerCase(req.params.email);
   displayNew.forEach((display) => {
     const storedTitle = _.lowerCase(display.title);
 
-    if(storedTitle === requestedTitle){
+    if (storedTitle === requestedTitle) {
       res.render("post.ejs", {
-        title : display.title,
-        content : display.content,
+        title: display.title,
+        content: display.content,
       });
     }
   });
@@ -65,8 +62,8 @@ app.get("/post/:email", (req,res) => {
 
 app.post("/delete/:email", (req, res) => {
   const requestedTitle = _.lowerCase(req.params.email);
-  const indexToRemove = displayNew.findIndex((display) =>
-    _.lowerCase(display.title) === requestedTitle
+  const indexToRemove = displayNew.findIndex(
+    (display) => _.lowerCase(display.title) === requestedTitle
   );
 
   if (indexToRemove !== -1) {
@@ -76,9 +73,6 @@ app.post("/delete/:email", (req, res) => {
   res.redirect("/");
 });
 
-
-app.listen(process.env.PORT || port, () => {
+app.listen(port, () => {
   console.log(`Your server started on port ${port}`);
-})
-
-
+});
